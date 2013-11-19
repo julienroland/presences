@@ -1,9 +1,10 @@
 #Prise de présence
 Le but de l’application est de permettre à un enseignant identifié de :
 
-- gérer des élèves (avec photo, email, etc.) ;
 - gérer des cours ;
-- planifier des séances pour les cours (attention aux validations de dates) ;
+- organiser ses cours par année académique
+- gérer des élèves (avec photo, email, etc.) ;
+- planifier des séances pour les cours (attention aux validations de dates et aux motifs de répétition…) ;
 - associer des élèves à ses cours ;
 - prendre les présences séance par séance (absence non justifiée ; absence justifiée ; présence) ;
 - avoir le bilan des présences d’un élève pour un cours ;
