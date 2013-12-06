@@ -19,11 +19,11 @@
 // });
 
 
-Route::get('test', 'UserController@test' );
-
 Route::get('/', function()
 {
-	//return View::make('hello');
-   return Carbon::now();
+	return $students = Student::with('courses')->get();
+
+    //return Teacher::find(1)->students;
+
 });
 

@@ -21,6 +21,15 @@ class Teacher extends Eloquent {
         return $this->belongsToMany('Course')->withTimestamps();
     }
 
+    public function students()
+    {
+        return $this->belongsToMany('Course')
+                    ->join('course_student','courses.id','=','course_student.course_id')
+                    ->join('students','course_student.student_id','=','students.id')
+                    ->select('students.name as sn')
+                    ->groupBy('students.id');
+    }
+
     public static function studentsAsArray($id){
 
         return DB::table('teachers')

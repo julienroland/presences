@@ -17,7 +17,7 @@ class Student extends Eloquent {
 
     public function sessions()
     {
-        return $this->belongsToMany('CourseSession', 'session_student', 'student_id')
+        return $this->belongsToMany('CourseSession', 'session_student', 'student_id', 'session_id')
                     ->withPivot('attendance_id','comment')
                     ->withTimestamps();
     }

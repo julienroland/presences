@@ -12,13 +12,11 @@ class DatabaseSeeder extends Seeder {
 		Eloquent::unguard();
 		$this->call('LevelsTableSeeder');
 		$this->call('StudentsTableSeeder');
-		$this->call('GroupsTableSeeder');
 		$this->call('AttendancesTableSeeder');
 		$this->call('YearsTableSeeder');
 		$this->call('TeachersTableSeeder');
 		$this->call('CoursesTableSeeder');
 		
-		$this->call('GroupStudentTableSeeder');
 		$this->call('CourseTeacherTableSeeder');
 		$this->call('CourseStudentTableSeeder');
 		$this->call('SessionsTableSeeder');
