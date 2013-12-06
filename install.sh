@@ -61,7 +61,7 @@ sudo mv composer.phar /usr/local/bin/composer
 
 echo "--- Setting permissions to 777 on storage ---"
 sudo chmod -R 777 /vagrant/app/storage
-
-sudo mysql --user=root --password=root --execute="CREATE DATABASE elo2;"
+sudo mysql --user=root --password=root --execute="GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '' WITH GRANT OPTION; FLUSH PRIVILEGES;"
+sudo mysql --user=root --password=root --execute="CREATE DATABASE vagrant;"
 
 echo "--- All set to go! Would you like to play a game? ---"
