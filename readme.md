@@ -1,21 +1,26 @@
-## Laravel PHP Framework
+#Prise de présence
+Le but de l’application est de permettre à un enseignant identifié de :
 
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/version.png)](https://packagist.org/packages/laravel/framework) [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.png)](https://packagist.org/packages/laravel/framework) [![Build Status](https://travis-ci.org/laravel/framework.png)](https://travis-ci.org/laravel/framework)
+- gérer des cours ;
+- organiser ses cours par année académique
+- gérer des élèves (avec photo, email, etc.) ;
+- planifier des séances pour les cours (attention aux validations de dates et aux motifs de répétition…) ;
+- associer des élèves à ses cours ;
+- prendre les présences séance par séance (absence non justifiée ; absence justifiée ; présence) ;
+- avoir le bilan des présences d’un élève pour un cours ;
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+Des bonus sont souhaitables : 
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+- regrouper des élèves en groupe pour faciliter l’association d’élèves à un cours ;
+- afficher des stats de présence par cours ;
+- afficher des stats globales de présence d’un élève (donc, pour tous les cours auxquels il est inscrit, pas seulement ceux du prof qui est connecté) ;
+- rendre l’interface riche avec JS (par exemple, pour regrouper les élèves par groupe en faisant un glisser-déposer, utilisation d’ajax pour noter le statut de présence, etc.) ;
+- envoi d’un rappel à un élève après deux absences injustifiées consécutives ;
+- et tout ce que vous pourriez avoir comme idée supplémentaire
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Contrainte :
 
-## Official Documentation
-
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
-
-### Contributing To Laravel
-
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
-
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+- fait avec Laravel 4.0 ;
+- gestion de la DB via migrations ;
+- dépôt git privé sur bitbucket mais vous m’y invitez ;
+- maquette HTML/CSS à rendre la semaine prochaine.
