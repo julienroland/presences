@@ -5,6 +5,8 @@ class CoursesTableSeeder extends Seeder {
     {
         DB::table('courses')->delete();
 
+        //Rien de bien malin ici, on crée juste les cours un à un
+
         Course::create([
                         'level_id' => Level::whereName('troisième année infographie')->first()->id,
                         'year_id' => Year::whereName('2013-2014')->first()->id,

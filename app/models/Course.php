@@ -46,7 +46,7 @@ class Course extends Eloquent {
 
     public function sessions()
     {
-        return $this->hasMany('CourseSession', 'session_id');
+        return $this->hasMany('CourseSession');
     }
 
 }

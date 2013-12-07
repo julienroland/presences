@@ -4,7 +4,7 @@ class TeachersTableSeeder extends Seeder {
     public function run()
     {
         DB::table('teachers')->delete();
-
+        //Rien de très malin ici, juste une création manuelle
         Teacher::create([
                         'name' => 'Vilain',
                         'first_name' => 'Dominique',

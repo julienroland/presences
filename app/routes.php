@@ -21,8 +21,7 @@
 
 Route::get('/', function()
 {
-	return $students = Student::with('courses')->get();
-
+    return	$students = Student::with('groups')->get();
     //return Teacher::find(1)->students;
 
 });
