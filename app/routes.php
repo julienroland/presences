@@ -21,8 +21,11 @@
 
 Route::get('/', function()
 {
-    return	$students = Student::with('groups')->get();
-    //return Teacher::find(1)->students;
+    return 'hello';
+});
 
+Route::get('{teacher}/courses', function()
+{
+    //Retourne les cours d’un prof particulier
 });
 

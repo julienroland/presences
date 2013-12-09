@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder {
 		$this->call('CourseTeacherTableSeeder');
 		$this->call('CourseStudentTableSeeder');
 		$this->call('SessionStudentTableSeeder');
+		//Ajout des slugs, oubliés dans la première version
+		$this->call('SlugSeeder');
 	}
 
 }
