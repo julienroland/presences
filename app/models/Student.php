@@ -21,6 +21,14 @@ class Student extends Eloquent {
                     ->withPivot('attendance_id','comment')
                     ->withTimestamps();
     }
+    
+    public function sessionsByCourse($course)
+    {
+        return $this->belongsToMany('CourseSession', 'session_student', 'student_id', 'session_id')
+                    ->where('sessions.course_id','=',$course->id)
+                    ->withPivot('attendance_id','comment')
+                    ->get();
+    }
 
     public function groups()
     {
@@ -36,5 +44,6 @@ class Student extends Eloquent {
     {
         return $this->belongsToMany('Course')->withTimestamps();
     }
+
 
 }

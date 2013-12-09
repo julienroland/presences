@@ -14,25 +14,6 @@ class Teacher extends Eloquent implements UserInterface, RemindableInterface {
     protected $table = 'teachers';
 
     /**
-     * Method helping to retrieve the courses of a teacher
-     *
-     * 
-     */
-    public function courses()
-    {
-        return $this->belongsToMany('Course')->withTimestamps();
-    }
-
-    public function students()
-    {
-        return $this->belongsToMany('Course')
-                    ->join('course_student','courses.id','=','course_student.course_id')
-                    ->join('students','course_student.student_id','=','students.id')
-                    ->select('students.name as sn')
-                    ->groupBy('students.id');
-    }
-
-    /**
      * The attributes excluded from the model's JSON form.
      *
      * @var array
@@ -67,6 +48,29 @@ class Teacher extends Eloquent implements UserInterface, RemindableInterface {
     public function getReminderEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * Method helping to retrieve the courses of a teacher
+     *
+     * 
+     */
+    public function courses()
+    {
+        return $this->belongsToMany('Course')->withTimestamps();
+    }
+
+    public function students()
+    {
+        return $this->belongsToMany('Course')
+                    ->join('course_student','courses.id','=','course_student.course_id')
+                    ->join('students','course_student.student_id','=','students.id')
+                    ->select('students.id as student_id', 
+                             'students.name as student_name',
+                             'students.first_name as student_first_name',
+                             'students.slug as student_slug',
+                             'students.photo as student_photo')
+                    ->groupBy('students.id');
     }
 
 }
