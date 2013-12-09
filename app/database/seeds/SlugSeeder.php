@@ -9,6 +9,7 @@ class SlugSeeder extends Seeder {
         $this->slugs = [];
     }
 
+
     public function run()
     {
         //Commençons par les étudiants
@@ -39,7 +40,13 @@ class SlugSeeder extends Seeder {
 
 
     }
-
+    
+    /**
+     * Takes an array of words, creates a string with '-' separator and slugifies it
+     * If the string already exists, a number is added to it to make it unique
+     * @param  array $parts parts of the word to slugify
+     * @return string the slugified string
+     */
     private function getUniqueSlug($parts){
 
         $baseSlug = Str::slug(implode('-',$parts));
