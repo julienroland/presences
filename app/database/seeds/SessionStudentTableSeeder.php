@@ -17,10 +17,8 @@ class SessionStudentTableSeeder extends Seeder {
                 $groupName = $buffer[0];
                 $courseName = $buffer[1];
                 $weeksCount = $buffer[4];
-                $firstSessionStartFromFile = new Carbon($buffer[2]);
-                $firstSessionEndFromFile = new Carbon($buffer[3]);
-                $sessionStart = $firstSessionStartFromFile->copy();
-                $sessionEnd = $firstSessionEndFromFile->copy();
+                $sessionStart = new Carbon($buffer[2]);
+                $sessionEnd = new Carbon($buffer[3]);
                 //Récupération des étudiants selon leur groupe
                 $students = Group::whereName($groupName)->first()->students;
                 //Récupération des id min et max des status de présence
@@ -28,7 +26,8 @@ class SessionStudentTableSeeder extends Seeder {
                 $attendancesCollection = Attendance::all();
                 $minAttendanceId = $attendancesCollection->first()->id;
                 $maxAttendanceId = $attendancesCollection->last()->id;
-                
+                $courseId = Course::whereName($courseName)->first()->id;
+
                 //Création des sessions
                 for($i=0;$i<$weeksCount;$i++){
                     //Attention, plusieurs cours peuvent avoir le même nom 
@@ -41,7 +40,7 @@ class SessionStudentTableSeeder extends Seeder {
                     [
                         'date_start' => $i?$sessionStart->addWeek():$sessionStart,
                         'date_end' => $i?$sessionEnd->addWeek():$sessionEnd,
-                        'course_id' => Course::whereName($courseName)->first()->id,
+                        'course_id' => $courseId,
                         'description' => 'à modifier dans l’admin'
                     ]);
                     //Association des étudiants récupérés plus haut avec les sessions créées
