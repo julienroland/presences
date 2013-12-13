@@ -19,6 +19,7 @@
 // });
 
 
+
 Route::bind('teacher', function($value, $route)
 {
     return Teacher::where('slug', $value)->firstOrFail();
